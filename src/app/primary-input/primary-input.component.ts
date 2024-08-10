@@ -7,7 +7,7 @@ import { FormControl } from "@angular/forms";
   styleUrl: "./primary-input.component.css"
 })
 export class PrimaryInputComponent<T> {
-  @Input({ required: true }) formControl = new FormControl<T | null>(null);
+  @Input({ required: true }) control = new FormControl<T | null>(null);
   @Input({ required: true }) label = "";
   @Input({ required: true }) placeholder = "";
 }

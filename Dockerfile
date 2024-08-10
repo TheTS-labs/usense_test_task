@@ -9,10 +9,6 @@ RUN npm install -g @angular/cli
 COPY . .
 
 RUN ng build --configuration=production
+CMD npm run serve:ssr:usense_test_task
 
-FROM nginx:latest
-
-COPY --from=build app/dist/usense_test_task/browser /usr/share/nginx/html
-COPY --from=build app/nginx.conf /etc/nginx/nginx.conf
-
-EXPOSE 80
+EXPOSE 4000
