@@ -3,10 +3,10 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 
 import { AppComponent } from "./app.component";
-import { PasswordStrengthHintService } from "./password-strength-hint.service";
+import { PasswordStrengthHintService } from "./services/password-strength-hint.service";
 import { PrimaryInputComponent } from "./primary-input/primary-input.component";
 import { SectionComponent } from "./section/section.component";
-import { StrengthLevelService } from "./strength-level.service";
+import { StrengthLevelService } from "./services/strength-level.service";
 import { StrengthMeterComponent } from "./strength-meter/strength-meter.component";
 
 @NgModule({

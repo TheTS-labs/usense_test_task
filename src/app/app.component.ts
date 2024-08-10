@@ -1,7 +1,7 @@
 import { Component, inject } from "@angular/core";
 import { FormControl } from "@angular/forms";
 
-import { StrengthLevel, StrengthLevelService } from "./strength-level.service";
+import { StrengthLevel, StrengthLevelService } from "./services/strength-level.service";
 
 @Component({
   selector: "app-root",

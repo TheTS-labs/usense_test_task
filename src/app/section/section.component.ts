@@ -1,6 +1,6 @@
 import { Component, inject, Input } from "@angular/core";
 
-import { StrengthLevel, StrengthLevelService } from "../strength-level.service";
+import { StrengthLevel, StrengthLevelService } from "../services/strength-level.service";
 
 @Component({
   selector: "app-section",
