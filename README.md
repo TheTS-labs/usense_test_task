@@ -1,27 +1,55 @@
 # Usense Test task
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
+![Screenshot](./Screenshot.png)
 
-## Development server
+Test and evaluate password strength in real time.
+This application visually displays the strength of passwords using color-coded sections.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Quick start using Docker
 
-## Code scaffolding
+Clone the repository and cd into
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```terminal
+  git clone https://github.com/TheTS-labs/usense_test_task.git
+  cd usense_test_task
+```
 
-## Build
+Build and run a Docker container
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```terminal
+  docker build -t usense_test_task:latest .
+  docker run --rm -p 4000:4000 usense_test_task:latest
+```
 
-## Running unit tests
+Now you can open the site at <http://localhost:4000/>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Build and run without Docker
 
-## Running end-to-end tests
+Requirements:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Node.js v20+
+- npm v10+
+- git
 
-## Further help
+Clone the repository and cd into:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```terminal
+  git clone https://github.com/TheTS-labs/usense_test_task.git
+  cd usense_test_task
+```
+
+Install Angular CLI and project dependencies:
+
+```terminal
+  npm install
+  npm install -g @angular/cli
+```
+
+Build the project and run:
+
+```terminal
+  ng build --configuration=production
+  npm run serve:ssr:usense_test_task
+```
+
+Now you can open the site at <http://localhost:4000/>
