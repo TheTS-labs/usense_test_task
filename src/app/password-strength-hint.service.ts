@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+
 import { StrengthLevelService } from "./strength-level.service";
 
 @Injectable({

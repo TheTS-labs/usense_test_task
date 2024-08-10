@@ -1,5 +1,6 @@
 import { Component, inject } from "@angular/core";
 import { FormControl } from "@angular/forms";
+
 import { StrengthLevel, StrengthLevelService } from "./strength-level.service";
 
 @Component({

@@ -1,6 +1,7 @@
 import { Component, inject, Input } from "@angular/core";
-import { StrengthLevel, StrengthLevelService } from "../strength-level.service";
+
 import { PasswordStrengthHintService } from "../password-strength-hint.service";
+import { StrengthLevel, StrengthLevelService } from "../strength-level.service";
 
 @Component({
   selector: "app-strength-meter",

@@ -1,4 +1,5 @@
 import { Component, inject, Input } from "@angular/core";
+
 import { StrengthLevel, StrengthLevelService } from "../strength-level.service";
 
 @Component({

@@ -2,6 +2,8 @@
 const eslint = require("@eslint/js");
 const tseslint = require("typescript-eslint");
 const angular = require("angular-eslint");
+const stylisticTs = require("@stylistic/eslint-plugin-ts")
+const simpleImportSort = require("eslint-plugin-simple-import-sort");
 
 module.exports = tseslint.config(
   {
@@ -13,6 +15,11 @@ module.exports = tseslint.config(
       ...angular.configs.tsRecommended,
     ],
     processor: angular.processInlineTemplates,
+    plugins: {
+      // @ts-ignore
+      "@stylistic/ts": stylisticTs,
+      "simple-import-sort": simpleImportSort,
+    },
     rules: {
       "@angular-eslint/directive-selector": [
         "error",
@@ -32,7 +39,10 @@ module.exports = tseslint.config(
       ],
       "quotes": ["error", "double", { "avoidEscape": true }],
       "max-len": ["warn", { "code": 120, "tabWidth": 2 }],
-      "@typescript-eslint/no-unused-vars": "warn"
+      "@typescript-eslint/no-unused-vars": "warn",
+      "@stylistic/ts/semi": ["error", "always"],
+      "simple-import-sort/imports": "warn",
+      "simple-import-sort/exports": "warn",
     },
   },
   {

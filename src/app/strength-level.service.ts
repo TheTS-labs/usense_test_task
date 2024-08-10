@@ -52,10 +52,10 @@ export class StrengthLevelService {
 
   public increaseStrength(strengthLevel: StrengthLevel): StrengthLevel {
     if (strengthLevel == StrengthLevel.Strong) {
-      return strengthLevel
+      return strengthLevel;
     }
     
-    return strengthLevel + 1 as StrengthLevel
+    return strengthLevel + 1 as StrengthLevel;
   }
 
   public assessPasswordStrength(password: string): StrengthLevel {
