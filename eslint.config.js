@@ -32,6 +32,7 @@ module.exports = tseslint.config(
       ],
       "quotes": ["error", "double", { "avoidEscape": true }],
       "max-len": ["warn", { "code": 120, "tabWidth": 2 }],
+      "@typescript-eslint/no-unused-vars": "warn"
     },
   },
   {

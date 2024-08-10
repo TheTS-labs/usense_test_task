@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --background-color: #1f1f1f;
+  --text-color: white;
+}
+
+html, body {
+  font-family: "Arimo", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+
+  height: 100%;
+  margin: 0;
+}

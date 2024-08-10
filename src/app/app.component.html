@@ -1,6 +1,7 @@
-<label for="password">Password: </label>
-<input id="password" type="text" [formControl]="password">
+<div class="container">
+  <app-primary-input [formControl]="password" label="Password:" placeholder="Type your password here..." />
 
-<section-component [strengthLevel]="currentLevel" [threshold]="1" text="Contains only letters/symbols/digits" />
-<section-component [strengthLevel]="currentLevel" [threshold]="2" text="Contains only letters-symbols/letters-digits/digits-symbols" />
-<section-component [strengthLevel]="currentLevel" [threshold]="3" text="Contains letters, symbols and numbers" />
+  <hr />
+
+  <app-strength-meter [password]="password.value || ''" [currentLevel]="currentLevel"></app-strength-meter>
+</div>

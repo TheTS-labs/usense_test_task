@@ -1,32 +1,31 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from "@angular/core";
+import { StrengthLevel, StrengthLevelService } from "../strength-level.service";
 
 @Component({
-  selector: 'section-component',
+  selector: "app-section",
   template: `
-    <p [style.background-color]="strengthLevelColor">
-      {{ text }}
-    </p>
+    <div [style.background-color]="strengthLevelColor" class="section"></div>
   `,
+  styles: `
+    :host { flex: 1; }
+
+    .section {
+      height: 10px;
+      width: auto;
+      box-shadow: inset 0px 0px 0px 1px white;
+    }
+  `
 })
 export class SectionComponent {
-  @Input({ required: true }) strengthLevel: number = 0;
-  @Input({ required: true }) threshold: number = 0;
-  @Input({ required: true }) text: string = "";
+  @Input({ required: true }) strengthLevel: StrengthLevel = StrengthLevel.Empty;
+  @Input({ required: true }) threshold: StrengthLevel = StrengthLevel.Empty;
+  private service = inject(StrengthLevelService);
 
   get strengthLevelColor() {
     if (this.strengthLevel < this.threshold) {
-      return 'gray';
+      return StrengthLevelService.emptyColor;
     }
 
-    switch (this.strengthLevel) {
-      case 1:
-        return 'red';
-      case 2:
-        return 'yellow';
-      case 3:
-        return 'green';
-      default:
-        return 'gray';
-    }
+    return this.service.toColor(this.strengthLevel);
   }
 }

@@ -1,0 +1,22 @@
+.strengthContainer {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hint {
+  font-style: italic;
+  color: gray;
+}

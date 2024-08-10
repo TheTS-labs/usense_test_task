@@ -1,0 +1,21 @@
+<div class="headerContainer">
+  <div>Password strength</div>
+  <div [style.color]="currentLevelColor">{{ currentLevelString }}</div>
+</div>
+
+<div class="strengthContainer">
+  <app-section
+    [strengthLevel]="currentLevel"
+    [threshold]="passwordTooShort() && !passwordIsEmpty() ? strengthLevel.Empty : strengthLevel.Weak"
+  />
+  <app-section
+    [strengthLevel]="currentLevel"
+    [threshold]="passwordTooShort() && !passwordIsEmpty() ? strengthLevel.Empty : strengthLevel.Medium"
+  />
+  <app-section
+    [strengthLevel]="currentLevel"
+    [threshold]="passwordTooShort() && !passwordIsEmpty() ? strengthLevel.Empty : strengthLevel.Strong"
+  />
+</div>
+
+<div class="hint">{{ currentHint }}</div>

@@ -1,6 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { FormControl } from "@angular/forms";
-import { SectionComponent } from "./section/section.component";
+import { StrengthLevel, StrengthLevelService } from "./strength-level.service";
 
 @Component({
   selector: "app-root",
@@ -8,23 +8,12 @@ import { SectionComponent } from "./section/section.component";
   styleUrl: "./app.component.css",
 })
 export class AppComponent {
+  private strengthLevelService = inject(StrengthLevelService);
+
+  strengthLevel: typeof StrengthLevel = StrengthLevel;
   password = new FormControl("");
 
-  get currentLevel() {
-    let strength = 0;
-    
-    if (this.password.value?.match(/[a-zA-Z]+/)) {
-        strength += 1
-    }
-    
-    if (this.password.value?.match(/\d+/)) {
-        strength += 1
-    }
-    
-    if (this.password.value?.match(/[$@#&!]+/)) {
-        strength += 1
-    }
-    
-    return strength;
+  get currentLevel(): StrengthLevel {
+    return this.strengthLevelService.assessPasswordStrength(this.password.value || "");
   }
 }
